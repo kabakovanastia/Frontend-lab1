@@ -1,7 +1,10 @@
 <template>
     <head>
-       <meta charset="UTF-8" />
-       <title>lab1</title>
+        <meta charset="UTF-8" />
+        <title>lab1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     </head>
 
     <div class="main-cont">
@@ -18,8 +21,8 @@
                 </ul>
             </div>
             <div class="main-block">
-                <h1 class="header-text">Заголовок основного блока</h1>
-                <span class="header-span" id="text">{{string1}}</span>
+                <h1 class="title">Заголовок основного блока</h1>
+                <img class="main-pic" id="pic" src={{pic1}}>
                 <button @click="changeText">Поменять приветствие</button>
             </div>
             <div class="third-block">
@@ -33,12 +36,12 @@
 </template>
 <script setup>
     import {ref} from 'vue';
-    const string1 = ref('Hello, world!')
-    function changeText() {
-        if (string1.value == "Hello, world!"){
-            string1.value = "Hello, FEFU!";
+    const pic1 = ref("assets/pic1.jpg")
+    function changePic() {
+        if (pic1.value == "assets/pic1.jpg"){
+            pic1.value = "assets/pic2.jpg";
         } else {
-            string1.value = "Hello, world!";
+            pic1.value = "assets/pic1.jpg";
         }
     }
 </script>
@@ -48,6 +51,7 @@
     flex-direction: column;
     height: 97vh;
     font-size: 1.6rem;
+    font-family: Open Sans, sans-serif;
 }
 .header {
     background-color: #93D7E4;
@@ -76,6 +80,7 @@
     margin: 10px;
     padding: 10px;
     align-items: center;
+    font-family: Montserrat, sans-serif;
 }
 .third-block {
     width: 20%;
@@ -90,15 +95,16 @@
     padding: 10px;
     align-content: center;
 }
-.header-text {
+.title {
     flex-grow: 1;
 }
-.header-span {
+.main-span {
     text-align: center;
     margin: 20px;
 }
 button {
     width: 55%;
     font-size: 1.6rem;
+    font-family: Open Sans, sans-serif;
 }
 </style>
