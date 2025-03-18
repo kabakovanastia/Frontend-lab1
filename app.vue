@@ -22,7 +22,7 @@
             </div>
             <div class="main-block">
                 <h1 class="title">Заголовок основного блока</h1>
-                <img class="main-pic" id="pic" src='require("./static/pic1")'/>
+                <img class="main-pic" id="pic" :src="pic1"/>
                 <button @click="changePic">Поменять картинку</button>
             </div>
             <div class="third-block">
@@ -34,17 +34,17 @@
         </div>
     </div>
 </template>
-<!-- <script setup>
+<script setup>
     import {ref} from 'vue';
-    const pic1 = ref("./assets/pic1.jpg")
+    const pic1 = ref("/pic1.jpg")
     function changePic() {
-        if (pic1.value == "./assets/pic1.jpg"){
-            pic1.value = "./assets/pic2.jpg";
+        if (pic1.value == "/pic1.jpg"){
+            pic1.value = "/pic2.jpg";
         } else {
-            pic1.value = "./assets/pic1.jpg";
+            pic1.value = "/pic1.jpg";
         }
     }
-</script> -->
+</script>
 <style scoped>
 .main-cont {
     display: flex;
